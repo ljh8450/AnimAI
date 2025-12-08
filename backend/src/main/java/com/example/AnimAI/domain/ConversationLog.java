@@ -1,8 +1,7 @@
-package com.example.AnimAI.domain;
+package com.example.animai.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,14 +12,13 @@ import java.time.LocalDateTime;
 @Builder
 public class ConversationLog {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long ownerId;
-
     private Long eggId;
-
-    private Long petId; // 아직 펫이 없으면 null
+    private Long petId;
 
     private String speaker; // "USER" | "EGG" | "PET"
 

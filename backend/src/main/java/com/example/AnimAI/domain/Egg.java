@@ -1,4 +1,4 @@
-package com.example.AnimAI.domain;
+package com.example.animai.domain;
 
 import jakarta.persistence.*;
 import lombok.*;

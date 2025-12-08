@@ -1,8 +1,8 @@
-package com.example.AnimAI.controller;
+package com.example.animai.controller;
 
-import com.example.aipet.dto.EggMessageRequest;
-import com.example.aipet.dto.EggMessageResponse;
-import com.example.aipet.service.EggService;
+import com.example.animai.dto.EggMessageRequest;
+import com.example.animai.dto.EggMessageResponse;
+import com.example.animai.service.EggService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

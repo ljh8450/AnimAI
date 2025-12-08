@@ -1,1 +1,1 @@
-AnimAI
+animai

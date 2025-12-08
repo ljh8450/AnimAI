@@ -1,11 +1,16 @@
-package com.example.AnimAI.domain;
+package com.example.animai.domain;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "users")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -13,12 +18,13 @@ import java.time.LocalDateTime;
 @Builder
 public class User {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String email;
 
-    private String password; // 처음엔 평문으로 두고 나중에 암호화
+    private String password;
 
     private String nickname;
 

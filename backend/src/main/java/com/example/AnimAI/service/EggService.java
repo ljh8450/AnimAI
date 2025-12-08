@@ -1,14 +1,14 @@
-package com.example.AnimAI.service;
+package com.example.animai.service;
 
-import com.example.AnimAI.domain.ConversationLog;
-import com.example.AnimAI.domain.Egg;
-import com.example.AnimAI.domain.User;
-import com.example.AnimAI.dto.EggMessageResponse;
-import com.example.AnimAI.dto.agent.EggAgentRequest;
-import com.example.AnimAI.dto.agent.EggAgentResponse;
-import com.example.AnimAI.repository.ConversationLogRepository;
-import com.example.AnimAI.repository.EggRepository;
-import com.example.AnimAI.repository.UserRepository;
+import com.example.animai.domain.ConversationLog;
+import com.example.animai.domain.Egg;
+import com.example.animai.domain.User;
+import com.example.animai.dto.EggMessageResponse;
+import com.example.animai.dto.agent.EggAgentRequest;
+import com.example.animai.dto.agent.EggAgentResponse;
+import com.example.animai.repository.ConversationLogRepository;
+import com.example.animai.repository.EggRepository;
+import com.example.animai.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

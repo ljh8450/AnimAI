@@ -1,4 +1,4 @@
-package com.example.AnimAI.dto.agent;
+package com.example.animai.dto.agent;
 
 import lombok.Getter;
 import lombok.Setter;

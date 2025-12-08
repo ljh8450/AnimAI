@@ -1,6 +1,6 @@
-package com.example.AinimAI.repository;
+package com.example.animai.repository;
 
-import com.example.aipet.domain.ConversationLog;
+import com.example.animai.domain.ConversationLog;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

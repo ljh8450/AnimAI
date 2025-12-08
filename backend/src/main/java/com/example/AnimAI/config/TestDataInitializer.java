@@ -1,7 +1,7 @@
-package com.example.AnimAI.config;
+package com.example.animai.config;
 
-import com.example.AnimAI.domain.User;
-import com.example.AnimAI.repository.UserRepository;
+import com.example.animai.domain.User;
+import com.example.animai.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
