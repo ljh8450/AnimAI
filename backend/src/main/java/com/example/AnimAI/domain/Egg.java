@@ -1,0 +1,30 @@
+package com.example.AnimAI.domain;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Egg {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User owner;
+
+    private boolean hatched;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime hatchedAt;
+
+    @Lob
+    private String traitJson; // 부화 직전에 추론된 특성 정보
+}
