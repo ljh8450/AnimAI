@@ -90,8 +90,8 @@ app.post("/api/login", async (req, res) => {
   if (!email || !password)
     return res.status(400).json({ message: "email과 password는 필수입니다." });
 
-  const conn = await pool.getConnection();
   try {
+    const conn = await pool.getConnection();
     const [rows] = await conn.query(
       "SELECT id, email, nickname, password_hash FROM users WHERE email = ?",
       [email]
@@ -147,9 +147,8 @@ app.post("/api/eggs/:eggId/messages", async (req, res) => {
   if (!userId || !message)
     return res.status(400).json({ message: "userId와 message 필요" });
 
-  const conn = await pool.getConnection();
-
   try {
+    const conn = await pool.getConnection();
     // 1) eggId가 없으면 유저의 알 찾기/생성
     if (!eggId || eggId === 0) {
       const [eggRows] = await conn.query(
