@@ -9,7 +9,37 @@ import OpenAI from "openai";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+// ✅ CORS를 프론트 도메인 + 로컬 허용
+const allowedOrigins = [
+  "http://localhost:5173",              // 로컬 개발용
+  "https://animai-tolx.onrender.com",   // Render 프론트 도메인
+];
+
+// 공통 CORS 미들웨어
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin && allowedOrigins.includes(origin)) {
+    res.header("Access-Control-Allow-Origin", origin);
+  }
+
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+  );
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Authorization"
+  );
+
+  // preflight(OPTIONS) 요청이면 여기서 끝내기
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
+
 app.use(bodyParser.json());
 
 // MySQL pool
