@@ -25,16 +25,38 @@ function App() {
 
   if (!user) {
     return (
-      <LoginForm
-        onLoginSuccess={(u) => {
-          setUser(u);
-          localStorage.setItem("animai_user", JSON.stringify(u));
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#f5f5f5",
         }}
-      />
+      >
+        <LoginForm
+          onLoginSuccess={(u: UserInfo) => {
+            setUser(u);
+          }}
+        />
+      </div>
     );
   }
 
-  return <EggChat user={user} />;
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#f5f5f5",
+      }}
+    >
+      <EggChat user={user} />
+    </div>
+  );
+
 }
 
 export default App;
