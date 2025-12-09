@@ -12,7 +12,6 @@ type LoginFormProps = {
 };
 
 export default function LoginForm({ onLoginSuccess }: LoginFormProps) {
-  const API = import.meta.env.VITE_API_URL;
   const [email, setEmail] = useState("");
   const [nickname, setNickname] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +24,7 @@ export default function LoginForm({ onLoginSuccess }: LoginFormProps) {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API}/api/login`, {
+      const res = await fetch("https://animai-d90a.onrender.com/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

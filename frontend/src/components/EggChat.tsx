@@ -51,7 +51,6 @@ const getEggImage = (status: EggStatus, personality: EggPersonality): string => 
 */
 
 export const EggChat: React.FC<EggChatProps> = ({ user }) => {
-  const API = import.meta.env.VITE_API_URL;
 
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
@@ -109,7 +108,7 @@ export const EggChat: React.FC<EggChatProps> = ({ user }) => {
       const targetEggId = eggId ?? 0;
 
       const res = await fetch(
-        `${API}/api/eggs/${targetEggId}/messages?userId=${user.userId}`,
+        `https://animai-d90a.onrender.com/api/eggs/${targetEggId}/messages?userId=${user.userId}`,
         {
           method: "POST",
           headers: {
