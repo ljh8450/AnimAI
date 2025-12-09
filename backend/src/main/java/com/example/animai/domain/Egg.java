@@ -19,9 +19,11 @@ public class Egg {
     @ManyToOne(fetch = FetchType.LAZY)
     private User owner;
 
-    private boolean hatched;
+    @Builder.Default
+    private boolean hatched = false;
 
-    private LocalDateTime createdAt;
+    @Builder.Default
+    private LocalDateTime createdAt = LocalDateTime.now();;
 
     private LocalDateTime hatchedAt;
 
